@@ -1,3 +1,4 @@
+currentBuild.displayName = 'Sample-Decl-Pipeline-#'+currentBuild.number
 pipeline{
     agent any
     environment{
