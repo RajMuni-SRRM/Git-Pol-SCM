@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    environment{
+        PATH = "/usr/share/maven/bin:$PATH"
+    }
+    stages{
+        stage ('Git'){
+            steps{
+                git branch: 'vp-rem', url: 'https://github.com/devopshydclub/vprofile-repo.git'
+            }
+        }
+        stage ("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }    
+        
+    }
+}
